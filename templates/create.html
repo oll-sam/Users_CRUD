@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Users</title>
+</head>
+<body>
+    <h1>Add Users</h1>
+    <div id="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th> First name</th>
+                    <th> Last Name</th>
+                    <th>Email</th>
+                    <th> Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for u in users %}
+                <tr>
+                    <td>{{u.idusers}}</td>
+                    <td>{{u.first_name}}</td>
+                    <td>{{u.last_name}}</td>
+                    <td>{{u.email}}</td>
+                    <td>{{u.created_at}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table><br><br>
+        <a href="/">Add A New User!</a>
+    </div>
+</body>
+</html>
