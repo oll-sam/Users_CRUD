@@ -9,7 +9,7 @@
     <title>Users</title>
 </head>
 <body>
-    <h1>Add Users</h1>
+    <h1>{{user.first_name}} {{user.last_name}}</h1>
     <div id="container">
         <table>
             <thead>
@@ -22,21 +22,17 @@
                 </tr>
             </thead>
             <tbody>
-                {% for u in users %}
                 <tr>
-                    <td>{{u.idusers}}</td>
-                    <td>{{u.first_name}}</td>
-                    <td>{{u.last_name}}</td>
-                    <td>{{u.email}}</td>
-                    <td>{{u.created_at}}</td>
-                    <td><a href="/select/{{u.idusers}}">Select</a></td>
-                    <td><a href="/edit/{{u.idusers}}">Edit</a></td>
-                    <td><a href="/delete/{{u.idusers}}">Delete</a></td>
+                    <td>{{user.idusers}}</td>
+                    <td>{{user.first_name}}</td>
+                    <td>{{user.last_name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.created_at}}</td>
+                    <td><a href="/edit/{{user.idusers}}">Edit</a></td>
+                    <td><a href="/delete/{{user.idusers}}">Delete</a></td>
                 </tr>
-                {% endfor %}
             </tbody>
         </table><br><br>
-        <a href="/">Add New User</a> 
+        <a href="/users">Back To User</a> 
     </div>
 </body>
-</html>
